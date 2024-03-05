@@ -1,0 +1,25 @@
+{
+  "name": "tiktok-downloader",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RhazeCoder/tiktok-downloader.git"
+  },
+  "author": "RhazeCoder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RhazeCoder/tiktok-downloader/issues"
+  },
+  "homepage": "https://github.com/RhazeCoder/tiktok-downloader#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.3",
+    "request-promise": "^4.2.6"
+  }
+}
