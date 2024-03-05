@@ -47,7 +47,6 @@ async function downloadVideo(videoUrl, fileName) {
     wait.style.display = "block";
     wait.textContent = "Please wait, downloading...";
 
-    // file name just get the 12 character
     fileName = fileName.substring(0, 12);
 
     const response = await fetch(videoUrl);

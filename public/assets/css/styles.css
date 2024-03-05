@@ -153,12 +153,6 @@ html, body {
   }
 }
 
-@media (min-width: 1200px) {
-  .result-container {
-    padding: 0 100px;
-  }
-}
-
 .result-info-container {
   background-color: rgb(240,243,255);
   border-radius: 15px;
@@ -202,18 +196,6 @@ html, body {
     flex-direction: row;
     align-items: center;
     max-height: 243px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .result-info-container {
-    background-color: rgb(240,243,255);
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-height: 283px;
   }
 }
 
