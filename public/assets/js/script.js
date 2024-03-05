@@ -6,6 +6,7 @@ const title = document.getElementById('title');
 const creator = document.getElementById('creator');
 const duration = document.getElementById('duration');
 const size = document.getElementById('size');
+const wait = document.getElementById('wait');
 const result_container = document.getElementsByClassName('result-container');
 
 pasteBtn.addEventListener('click', async () => {
@@ -42,6 +43,7 @@ downloadBtn.addEventListener('click', async () => {
 });
 
 async function downloadVideo(videoUrl, fileName) {
+    wait.textContent = "Please wait, downloading...";
     const response = await fetch(videoUrl);
     const blob = await response.blob();
 
