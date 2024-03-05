@@ -42,6 +42,7 @@ html, body {
 .input-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin-bottom: 60px;
 }
 
@@ -49,8 +50,8 @@ html, body {
   .input-container {
     display: flex;
     flex-direction: row;
-    height: 50px;
-    padding: 0 50px;
+    height: 20px;
+    padding: 0 20px;
   }
 }
 
@@ -59,7 +60,7 @@ html, body {
     display: flex;
     flex-direction: row;
     height: 60px;
-    padding: 0 80px;
+    padding: 0 50px;
   }
 }
 
@@ -93,8 +94,8 @@ html, body {
 }
 
 .url-text-input {
-  display: 3 flex;
-  flex: auto;
+  display: flex;
+  flex: 3 auto;
   height: 100%;
   font-size: medium;
   padding: 5px;
