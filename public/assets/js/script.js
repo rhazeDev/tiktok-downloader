@@ -25,8 +25,9 @@ downloadBtn.addEventListener('click', async () => {
     const data = await response.json();
     
     if (data.status == "success") {
+        let title_c = data.data.title;
         cover.src = data.data.cover;
-        title.textContent = data.data.title;
+        title.textContent = title_c.substring(0, 30) + "...";
         creator.textContent = "- " + data.data.creator;
         duration.textContent = data.data.duration;
         size.textContent = data.data.size;
@@ -43,7 +44,12 @@ downloadBtn.addEventListener('click', async () => {
 });
 
 async function downloadVideo(videoUrl, fileName) {
+    wait.style.display = "block";
     wait.textContent = "Please wait, downloading...";
+
+    // file name just get the 12 character
+    fileName = fileName.substring(0, 12);
+
     const response = await fetch(videoUrl);
     const blob = await response.blob();
 
@@ -54,4 +60,6 @@ async function downloadVideo(videoUrl, fileName) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    wait.style.display = "none";
 }
