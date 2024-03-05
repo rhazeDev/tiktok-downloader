@@ -246,12 +246,21 @@ html, body {
   .preview-download-cover {
     border-radius: 15px 0 0 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    min-width: 204px;
+    min-height: 203px;
+  }
+}
+
+@media (min-width: 992px) {
+  .preview-download-cover {
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     min-width: 244px;
     min-height: 243px;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .preview-download-cover {
     border-radius: 15px 0 0 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
