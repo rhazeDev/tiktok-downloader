@@ -42,7 +42,6 @@ downloadBtn.addEventListener('click', async () => {
 });
 
 async function downloadVideo(videoUrl, fileName) {
-    alert("Downloaded started, please wait...")
     const response = await fetch(videoUrl);
     const blob = await response.blob();
 
