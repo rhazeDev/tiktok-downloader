@@ -82,7 +82,7 @@ html, body {
 .url-input-container {
   background-color: var(--bs-light);
   display: flex;
-  flex: 3 auto;
+  flex: auto;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
@@ -93,7 +93,7 @@ html, body {
 }
 
 .url-text-input {
-  display: flex;
+  display: 3 flex;
   flex: auto;
   height: 100%;
   font-size: medium;
