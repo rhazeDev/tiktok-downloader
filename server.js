@@ -50,7 +50,7 @@ app.post('/api/download', async (req, res) => {
                 data: {
                     download_link: `https://www.tikwm.com${data.data.hdplay}`,
                     cover: `https://www.tikwm.com${data.data.cover}`,
-                    title: data.data.title,
+                    title: (data.data.title).split("#")[0],
                     creator: data.data.author.nickname,
                     creatorId: data.data.author.unique_id,
                     duration: duration.split(":")[0] == "0" ? duration.split(":")[1] + " seconds" : duration + " minutes",
