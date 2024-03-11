@@ -1,5 +1,4 @@
 import express from "express";
-import fs from "fs";
 import path from "path";
 import request from "request-promise";
 import { fileURLToPath } from 'url';
@@ -44,9 +43,8 @@ app.post('/api/download', async (req, res) => {
         const msg = data.msg;
 
         if (msg == "success") {
-            const duration = data.data.duration / 60;
+            const duration = `${Math.floor(data.data.duration / 60)}:${Math.floor(data.data.duration % 60)}`;
             const size = data.data.size / 1000000;
-
 
             res.json({ status: "success",
                 data: {
@@ -54,7 +52,8 @@ app.post('/api/download', async (req, res) => {
                     cover: `https://www.tikwm.com${data.data.cover}`,
                     title: data.data.title,
                     creator: data.data.author.nickname,
-                    duration: duration.toFixed(2) + " minutes",
+                    creatorId: data.data.author.unique_id,
+                    duration: duration.split(":")[0] == "0" ? duration.split(":")[1] + " seconds" : duration + " minutes",
                     size: size.toFixed(2) + "MB"
                 }
             });

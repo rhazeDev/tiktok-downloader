@@ -25,17 +25,16 @@ downloadBtn.addEventListener('click', async () => {
     const data = await response.json();
     
     if (data.status == "success") {
-        let title_c = data.data.title;
         cover.src = data.data.cover;
-        title.textContent = title_c.substring(0, 30) + "...";
-        creator.textContent = "- " + data.data.creator;
+        title.innerHTML = `<b>${data.data.title}</b>`;
+        creator.innerHTML = `- <i><a href="https://www.tiktok.com/@${data.data.creatorId}" target="_blank">${data.data.creator}</a></i>`;
         duration.textContent = data.data.duration;
-        size.textContent = data.data.size;
+        size.textContent = data.data.size;  
 
         result_container[0].style.display = "block";
 
         // download video
-        downloadVideo(data.data.download_link, data.data.title)
+        downloadVideo(data.data.download_link)
        
 
     } else {
@@ -43,18 +42,17 @@ downloadBtn.addEventListener('click', async () => {
     }
 });
 
-async function downloadVideo(videoUrl, fileName) {
+async function downloadVideo(videoUrl) {
+    const date = new Date().getTime();
     wait.style.display = "block";
     wait.textContent = "Please wait, downloading...";
-
-    fileName = fileName.substring(0, 12);
 
     const response = await fetch(videoUrl);
     const blob = await response.blob();
 
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.download = "Rhaze" + fileName + '.mp4';
+    link.download = "Rhaze" + date + '.mp4';
 
     document.body.appendChild(link);
     link.click();
